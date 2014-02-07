@@ -1,7 +1,7 @@
 {
   "name": "grunt-dehoverify",
   "description": "Remove :hover styles from your CSS",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/Lapple/grunt-dehoverify",
   "author": {
     "name": "Aziz Yuldashev",
