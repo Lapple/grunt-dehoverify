@@ -11,6 +11,22 @@
 var rework = require('rework');
 var walk = require('rework-walk');
 
+var dehoverify = function(style) {
+  walk(style, function(rule) {
+    if (!rule.selectors) {
+      return;
+    }
+
+    rule.selectors = rule.selectors.filter(function(selector) {
+      return !(/\:hover/.test(selector));
+    });
+
+    if (rule.selectors.length === 0) {
+      rule.declarations = [];
+    }
+  });
+};
+
 module.exports = function(grunt) {
 
   grunt.registerMultiTask('dehoverify', function() {
@@ -42,17 +58,3 @@ module.exports = function(grunt) {
   });
 
 };
-
-function dehoverify(style) {
-  walk(style, function(rule) {
-    if (!rule.selectors) return;
-
-    rule.selectors = rule.selectors.filter(function(selector) {
-      return !(/\:hover/.test(selector));
-    });
-
-    if (rule.selectors.length === 0) {
-      rule.declarations = [];
-    }
-  })
-}
