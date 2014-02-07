@@ -1,0 +1,13 @@
+div:hover {
+    background: red;
+}
+
+a {
+    background: blue;
+}
+
+.several, .selectors:hover, .shared {
+    -webkit-transition: opacity 3s 2s;
+    -moz-transition: opacity 3s 2s;
+    transition: opacity 3s 2s;
+}
