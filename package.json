@@ -28,7 +28,8 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "rework": "~0.20.2"
+    "rework": "~0.20.2",
+    "rework-walk": "~1.0.0"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.1.1",

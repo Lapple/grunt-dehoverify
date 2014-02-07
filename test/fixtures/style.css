@@ -11,3 +11,13 @@ a {
     -moz-transition: opacity 3s 2s;
     transition: opacity 3s 2s;
 }
+
+@media (max-width: 600px) {
+    .simple {
+        display: none;
+    }
+
+    .simple:hover {
+        display: block;
+    }
+}

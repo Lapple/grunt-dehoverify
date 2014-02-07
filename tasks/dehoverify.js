@@ -9,6 +9,7 @@
 'use strict';
 
 var rework = require('rework');
+var walk = require('rework-walk');
 
 module.exports = function(grunt) {
 
@@ -43,8 +44,8 @@ module.exports = function(grunt) {
 };
 
 function dehoverify(style) {
-  style.rules = style.rules.map(function(rule) {
-    if (!rule.selectors) return rule;
+  walk(style, function(rule) {
+    if (!rule.selectors) return;
 
     rule.selectors = rule.selectors.filter(function(selector) {
       return !(/\:hover/.test(selector));
@@ -53,7 +54,5 @@ function dehoverify(style) {
     if (rule.selectors.length === 0) {
       rule.declarations = [];
     }
-
-    return rule;
-  });
+  })
 }
